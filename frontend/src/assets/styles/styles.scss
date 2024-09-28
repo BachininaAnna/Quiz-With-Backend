@@ -1,0 +1,15 @@
+@import "fonts";
+@import "global";
+@import "form";
+
+@media (max-width: 1250px) {
+  header {
+    padding: 42px 20px 40px 20px !important;
+  }
+  .form {
+  padding-left: 30px !important;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

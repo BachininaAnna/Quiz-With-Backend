@@ -1,0 +1,39 @@
+<section class="answers">
+  <div class="container">
+    <div class="answers-pre-title">
+      Результат прохождения теста
+      <img src="assets/images/grey-mini-arrow.svg" alt="Стрелка">
+      <span id="answers-pre-title-span" *ngIf="test">{{test.name}}</span>
+    </div>
+    <h1 class="answers-title common-title"><span>Правильные ответы</span> к тесту</h1>
+    <div class="answers-person-info" *ngIf="userInfo && userInfo.fullName">
+      Тест выполнил <span>{{userInfo.fullName}}</span>
+    </div>
+    <div class="test-details" *ngIf="test">
+
+
+      <div class="question" *ngFor="let question of test.questions; let i = index">
+        <div class="question-title">
+          <span>Вопрос {{i+1}}: </span>
+          {{question.question}}
+        </div>
+
+        <div class="question-option"
+             *ngFor="let item of question.answers"
+             [class.correct]="item.correct === true"
+             [class.wrong]="item.correct === false">
+          <div class="circle"></div>
+          <div class="text">{{item.answer}}</div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="back-to-result common-link">
+      <a href="#/result">
+        Обратно к моему результату теста
+        <img src="assets/images/blue-mini-arrow.svg" alt="Стрелка"></a>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,17 @@
+<section class="result">
+  <div class="container">
+    <div class="result-image">
+      <img src="assets/images/question-marks-image.svg" alt="Вопросы">
+    </div>
+    <div class="result-title common-title">
+      Ура! Ты прошёл тест! <span>Твой результат:</span>
+    </div>
+    <div class="result-score">
+      <img src="assets/images/result-image.svg" alt="картинка">
+      <span class="result-score-text">{{result}}</span>
+    </div>
+    <div class="see-correct-answers common-link">
+      <a routerLink="/answers/{{testId}}">Посмотреть правильные ответы  <img src="assets/images/blue-mini-arrow.svg" alt="Стрелка"></a>
+    </div>
+  </div>
+</section>

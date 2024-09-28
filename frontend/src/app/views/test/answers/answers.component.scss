@@ -1,0 +1,118 @@
+.answers {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  position: relative;
+
+  .container {
+    .answers-pre-title {
+      color: #DCDCF3;
+      font-size: 20px;
+      line-height: 24px;
+
+      & span {
+        color: #6933DC;
+      }
+
+      & img {
+        margin: 0 15px;
+        vertical-align: middle;
+      }
+    }
+
+    .answers-title {
+      margin-top: 60px;
+      margin-bottom: 10px;
+      font-size: 54px;
+      line-height: 65px;
+    }
+
+    .answers-person-info {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 60px;
+
+      & span {
+        font-family: "Museo Sans Cyrl Bold", sans-serif;
+        color: #6933DC;
+      }
+    }
+
+    .test-details {
+      margin-bottom: 60px;
+      font-size: 20px;
+
+      .question {
+        margin-bottom: 40px;
+
+        .question-title {
+          line-height: 130%;
+          margin-bottom: 20px;
+
+          & span {
+            font-size: 22px;
+            color: #6933dc;
+          }
+        }
+
+        .question-option {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+
+          .circle {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            border: 3px solid #6933DC;
+            border-radius: 50%;
+            box-sizing: border-box;
+            margin-right: 13px;
+          }
+
+          .text {
+            font-size: 20px;
+            line-height: 24px;
+          }
+
+          &.correct {
+            .circle {
+              border: 6px solid #5FDC33;
+            }
+
+            .text {
+              color: #5FDC33;
+            }
+          }
+
+          &.wrong {
+            .circle {
+              border: 6px solid #DC3333;
+            }
+
+            .text {
+              color: #DC3333;
+            }
+          }
+
+        }
+      }
+    }
+
+    .back-to-result {
+      position: absolute;
+      right: 0;
+      bottom: 20px;
+
+      img {
+        margin-left: 8px;
+      }
+    }
+
+  }
+}
+
+
+
+
+
+

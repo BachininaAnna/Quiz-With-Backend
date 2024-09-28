@@ -1,0 +1,43 @@
+<section class="test" *ngIf="quiz">
+  <div class="container">
+    <div class="test-pre-title">{{quiz.name}}</div>
+    <div class="test-progress-bar">
+      <div class="test-progress-bar-item active" *ngFor="let item of quiz.questions; let i = index"
+           [class.active]="currentQuestionIndex === (i+1)" [class.complete]="currentQuestionIndex > (i+1)">
+        <div class="test-progress-bar-item-circle"></div>
+        <div class="test-progress-bar-item-text">Вопрос {{i + 1}}</div>
+      </div>
+    </div>
+    <div class="test-question">
+      <div class="test-question-title common-title">
+        <span>Вопрос {{currentQuestionIndex}}: </span>{{activeQuestion.question}}</div>
+      <div class="test-question-options">
+        <div class="test-question-option" *ngFor="let item of activeQuestion.answers">
+          <input class="option-answer" id="answer-{{item.id}}" type="radio" name="answer" [value]="item.id"
+                 [(ngModel)]="chosenAnswerId">
+          <label for="answer-{{item.id}}">{{item.answer}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="test-actions">
+      <div>
+        <button class="button button-transparent" [disabled]="this.currentQuestionIndex === 1"
+                (click)="move('prev')">Назад
+        </button>
+      </div>
+      <div class="test-time">
+        <div class="test-time-text">Осталось времени:</div>
+        <div class="test-time-clock">{{timerseconds}}</div>
+      </div>
+      <div>
+        <button class="button button-transparent" [disabled]="!chosenAnswerId"
+                (click)="move('next')">
+          {{currentQuestionIndex === quiz.questions.length ? 'Завершить' : 'Дальше'}}</button>
+      </div>
+    </div>
+    <div class="pass-question common-link" (click)="move('pass')">
+      <a>Пропустить вопрос <img src="assets/images/blue-mini-arrow.svg" alt="Стрелка"></a>
+    </div>
+  </div>
+</section>
+
